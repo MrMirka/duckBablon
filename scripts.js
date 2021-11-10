@@ -18,10 +18,10 @@ const createScene = () => {
     //const ligth = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0,1,0), scene);
 
     pointLigth = new BABYLON.PointLight('pointLigth', new BABYLON.Vector3(0,0,0), scene);
-    pointLigth.intensity = 3000;
+    pointLigth.intensity = 300;
     
     
-    BABYLON.SceneLoader.Append('obj/', 'ball.glb', scene, function (scene) {
+    BABYLON.SceneLoader.Append('obj/', 'duck2.glb', scene, function (scene) {
         const hdri = BABYLON.CubeTexture.CreateFromPrefilteredData('./img/environment.env', scene);
          scene.enviromentTexture = hdri;
     });
@@ -42,7 +42,7 @@ const createScene = () => {
     var hdri = new BABYLON.HDRCubeTexture("./img/global_env_2.hdr", scene, 128, false, true, false, true);
     //pbr.environmentTexture = hdri;
     scene.environmentTexture = hdri;
-    //scene.environmentIntensity = 0.5;
+    scene.environmentIntensity = 0.5;
    
 
     
