@@ -32,13 +32,13 @@ const createScene = () => {
 
     pbr.baseColor = new BABYLON.Color3(1.0, 0.766, 0.336);
     pbr.metallic = 1;
-    pbr.roughness = 0.2;
+    pbr.roughness = 0.15;
     
 
     //const hdri = new BABYLON.CubeTexture('./img/environment.env', scene);
     var hdri = new BABYLON.HDRCubeTexture("./img/global_env_2.hdr", scene, 128, false, true, false, true);
-    pbr.environmentTexture = hdri;
-    //scene.environmentTexture = hdri;
+    //pbr.environmentTexture = hdri;
+    scene.environmentTexture = hdri;
     //scene.environmentIntensity = 0.5;
    
 
