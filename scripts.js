@@ -42,7 +42,7 @@ const createScene = () => {
     var hdri = new BABYLON.HDRCubeTexture("./img/global_env_2.hdr", scene, 128, false, true, false, true);
     //pbr.environmentTexture = hdri;
     scene.environmentTexture = hdri;
-    scene.environmentIntensity = 0.5;
+    //scene.environmentIntensity = 0.5;
    
 
     
