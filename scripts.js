@@ -21,7 +21,7 @@ const createScene = () => {
     pointLigth.intensity = 300;
     
     
-    BABYLON.SceneLoader.Append('obj/', 'ball.glb', scene, function (scene) {
+    BABYLON.SceneLoader.Append('obj/', 'ball.gltf', scene, function (scene) {
         const hdri = BABYLON.CubeTexture.CreateFromPrefilteredData('./img/environment.env', scene);
          scene.enviromentTexture = hdri;
     });
