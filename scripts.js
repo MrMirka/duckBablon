@@ -2,7 +2,8 @@
 let triger, pointLigth;
 
 const canvas = document.getElementById('canvas');
-const engine = new BABYLON.Engine(canvas, true, { disableWebGL2Support: true });
+const engine = new BABYLON.Engine(canvas, true);
+
 
 let divFps = document.getElementById("fps");
 
@@ -44,6 +45,6 @@ engine.runRenderLoop(function () {
     pointLigth.position.x = Math.sin(triger) * 32;
     pointLigth.position.z = Math.cos(triger) * 32;
 
-    divFps.innerHTML = engine.getFps().toFixed() + " fps";
+    divFps.innerHTML = engine.getFps().toFixed() + " fps " + engine.webGLVersion;
     scene.render();
 });
