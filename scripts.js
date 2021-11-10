@@ -1,6 +1,9 @@
 
+let triger, pointLigth;
+
 const canvas = document.getElementById('canvas');
 const engine = new BABYLON.Engine(canvas, true);
+
 let divFps = document.getElementById("fps");
 
 const createScene = () => {
@@ -10,9 +13,11 @@ const createScene = () => {
     const camera = new BABYLON.ArcRotateCamera('camera', -Math.PI/2, Math.PI / 2.5, 3, new BABYLON.Vector3(0,0,0), scene);
     camera.attachControl(canvas, true);
 
-    const ligth = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0,1,0), scene);
+    //const ligth = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0,1,0), scene);
+
+    pointLigth = new BABYLON.PointLight('pointLigth', new BABYLON.Vector3(0,0,0), scene);
+    pointLigth.intensity = 3000;
     
-    //BABYLON.GLTFFileLoader.IncrementalLoading = true;
     BABYLON.SceneLoader.Append('obj/', 'duck.gltf', scene, function (scene) {
         const hdri = BABYLON.CubeTexture.CreateFromPrefilteredData('./img/environment.env', scene);
          scene.enviromentTexture = hdri;
@@ -32,6 +37,11 @@ const createScene = () => {
 const scene = createScene();
 
 engine.runRenderLoop(function () {
+    triger = Date.now() * 0.0005;
+
+    pointLigth.position.x = Math.sin(triger) * 32;
+    pointLigth.position.z = Math.cos(triger) * 32;
+
     divFps.innerHTML = engine.getFps().toFixed() + " fps";
     scene.render();
 });
