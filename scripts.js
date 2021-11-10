@@ -41,7 +41,7 @@ const createScene = () => {
          scene.enviromentTexture = hdri;
     });
     
-
+ 
     /*
     var sphere = BABYLON.Mesh.CreateSphere("sphere1", 64, 2, scene);
     var pbr = new BABYLON.PBRMetallicRoughnessMaterial("pbr", scene);
