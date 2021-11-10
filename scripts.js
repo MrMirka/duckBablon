@@ -12,7 +12,7 @@ const createScene = () => {
     scene.clearColor = BABYLON.Color3.Black();
 
     const camera = new BABYLON.ArcRotateCamera('camera', Math.PI/1.4, Math.PI * .3, 4, new BABYLON.Vector3(0,0,0), scene);
-   // camera.attachControl(canvas, true);
+    camera.attachControl(canvas, true);
     
 
     //const ligth = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0,1,0), scene);
