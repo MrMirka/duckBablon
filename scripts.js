@@ -11,7 +11,8 @@ const createScene = () => {
     camera.attachControl(canvas, true);
 
     const ligth = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0,1,0), scene);
-    BABYLON.GLTFFileLoader.IncrementalLoading = true;
+    
+    //BABYLON.GLTFFileLoader.IncrementalLoading = true;
     BABYLON.SceneLoader.Append('obj/', 'duck.gltf', scene, function (scene) {
         const hdri = BABYLON.CubeTexture.CreateFromPrefilteredData('./img/environment.env', scene);
          scene.enviromentTexture = hdri;
