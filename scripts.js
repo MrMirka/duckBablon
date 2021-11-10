@@ -18,11 +18,11 @@ const createScene = () => {
          scene.enviromentTexture = hdri;
     });
 
-    //const hdri = BABYLON.CubeTexture.CreateFromPrefilteredData('./img/environment.env', scene);
-    const hdri = new BABYLON.CubeTexture('./img/environment.env', scene);
-    //scene.createDefaultSkybox(hdri, true);
-    //scene.environmentTexture = hdri;
-    //scene.environmentTexture = new BABYLON.CubeTexture("./img/environment.env", scene);
+    //const hdri = new BABYLON.CubeTexture('./img/environment.env', scene);
+    var hdri = new BABYLON.HDRCubeTexture("./img/global_env_2.hdr", scene, 128, false, true, false, true);
+
+    scene.environmentTexture = hdri;
+   
 
     
 
