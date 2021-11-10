@@ -21,7 +21,7 @@ const createScene = () => {
     //const hdri = BABYLON.CubeTexture.CreateFromPrefilteredData('./img/environment.env', scene);
     const hdri = new BABYLON.CubeTexture('./img/environment.env', scene);
     //scene.createDefaultSkybox(hdri, true);
-    scene.environmentTexture = hdri;
+    //scene.environmentTexture = hdri;
     //scene.environmentTexture = new BABYLON.CubeTexture("./img/environment.env", scene);
 
     
